@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class LoaderComponent : MonoBehaviour
+{
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(8);
+        SceneManager.LoadScene("StalkMenuScene");
+    }
+}
