@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1399200434589100081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1404
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8355deac1ccb32a4e9061b448e3b9868, type: 2}
+    - target: {fileID: 919132149155446097, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+      propertyPath: m_Name
+      value: Dice
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+--- !u!1 &2282089916681442656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c630b0a094cda441aa306ff782950be, type: 3}
+  m_PrefabInstance: {fileID: 1399200434589100081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4533632960818220732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282089916681442656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02086009, y: 0.02125759, z: 0.020901706}
+  m_Center: {x: -0.00003662845, y: -0.00008847145, z: 0.000020456966}
+--- !u!114 &6748305525325560069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282089916681442656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e906c8f2805f264588776f265e640f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateVariants:
+  - {x: -90, y: 0, z: 180}
+  - {x: 180, y: 0, z: 0}
+  - {x: 180, y: 0, z: -90}
+  - {x: 180, y: 0, z: -270}
+  - {x: 180, y: 0, z: -180}
+  - {x: 90, y: 0, z: 0}
+  rotateValuesVariants: 010000000200000003000000040000000500000006000000
+  fallEffect: {fileID: 3713061825624219627, guid: eb46e459918feb349bdea176cdc482b3, type: 3}
+  moveToPosition: {fileID: 0}
+  rotateValues: 0
+  isEnemie: 0

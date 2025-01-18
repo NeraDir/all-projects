@@ -1,0 +1,50 @@
+﻿using System.Collections;
+using Unity.Advertisement.IosSupport.Components;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace Unity.Advertisement.IosSupport.Samples
+{
+    /// <summary>
+    /// This component will trigger the context screen to appear when the scene starts,
+    /// if the user hasn't already responded to the iOS tracking dialog.
+    /// </summary>
+    public class ContextScreenManager : MonoBehaviour
+    {
+        public ContextScreenView contextViewComponent;
+
+        void Start()
+        {
+#if UNITY_IOS
+            // check with iOS to see if the user has accepted or declined tracking
+            var contextWaitingStatus = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+
+            if (contextWaitingStatus == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+            {
+                //contextScreen.sentTrackingAuthorizationRequest += () => Destroy(contextScreen.gameObject);
+                contextViewComponent.RequestAuthorizationTracking();
+            }
+#else
+            Debug.Log("Unity iOS Support: App Tracking Transparency status not checked, because the platform is not iOS.");
+#endif
+            StartCoroutine(Load());
+        }
+
+        private IEnumerator Load()
+        {
+#if UNITY_IOS && !UNITY_EDITOR
+        var contextviewStatus = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+
+        while (contextviewStatus == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+        {
+            contextviewStatus = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+            if (contextviewStatus == ATTrackingStatusBinding.AuthorizationTrackingStatus.AUTHORIZED)
+                    PlayerPrefs.SetInt("contextInfoSave", 1);
+            yield return null;
+        }
+#endif
+            SceneManager.LoadScene("Witing");
+            yield return null;
+        }
+    }   
+}

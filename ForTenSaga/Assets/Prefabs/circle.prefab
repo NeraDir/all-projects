@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8452400414495827334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9081268716549914428}
+  - component: {fileID: 5307771837078057113}
+  - component: {fileID: 7947737427593708627}
+  - component: {fileID: 3444174092217673274}
+  - component: {fileID: 6497045584217011298}
+  m_Layer: 2
+  m_Name: circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9081268716549914428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452400414495827334}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!33 &5307771837078057113
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452400414495827334}
+  m_Mesh: {fileID: -1621089319264288845, guid: acd0be928f1443a4da49bbfc79cd0745, type: 3}
+--- !u!23 &7947737427593708627
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452400414495827334}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 407f719ce5951d344840eb5daa331759, type: 2}
+  - {fileID: 2100000, guid: a31b296b8430dc448a0b163329684143, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3444174092217673274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452400414495827334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.046828598, y: 0.011696884, z: 0.046828598}
+  m_Center: {x: -0.000000011175871, y: 0, z: 0}
+--- !u!114 &6497045584217011298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452400414495827334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a9533908b88c4e9d38025b0a9d2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinMaterials:
+  - {fileID: 2100000, guid: 7ab266f973ba502499124fb4af9947f5, type: 2}
+  - {fileID: 2100000, guid: 15ef6c4fb007e5a478e0bbc904fc5675, type: 2}
+  - {fileID: 2100000, guid: 05a96572aa69e454eb4c24d68ad4d329, type: 2}
+  - {fileID: 2100000, guid: 34b4dca9a43371e46bb7651cd9cb95fc, type: 2}
+  - {fileID: 2100000, guid: 99fc36baf4179e540bb6e6f14202d632, type: 2}
+  - {fileID: 2100000, guid: 97e584380e08b8f4ebca0796749db236, type: 2}
+  - {fileID: 2100000, guid: 408cff126fe98f74d9ff2570d2831d62, type: 2}
+  _damageMaterial: {fileID: 2100000, guid: fa90b951b003d28418d280b8bf9e5dec, type: 2}
+  _heartMaterial: {fileID: 2100000, guid: 016a900729ad6fc47b031c8572759d8d, type: 2}
+  _coinMaterial: {fileID: 2100000, guid: 5bed468ab5462ae45b7779fb1dc85c3f, type: 2}
