@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7916360169147638583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8835878723148653489}
+  - component: {fileID: 5952930644195348126}
+  - component: {fileID: 258128279428341029}
+  - component: {fileID: 5413326733313946104}
+  - component: {fileID: 3961744027798553701}
+  m_Layer: 0
+  m_Name: partPref
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8835878723148653489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360169147638583}
+  m_LocalRotation: {x: -0, y: 0.7071067, z: 0.7071069, w: 0}
+  m_LocalPosition: {x: -2.19, y: 2.38, z: 15.17}
+  m_LocalScale: {x: 100.00002, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5952930644195348126
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360169147638583}
+  m_Mesh: {fileID: -5495902117074765545, guid: 60712be8e52663f428dfcdcee9bc7ccc, type: 3}
+--- !u!23 &258128279428341029
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360169147638583}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -6478536213147159724, guid: 60712be8e52663f428dfcdcee9bc7ccc, type: 3}
+  - {fileID: 2100000, guid: 47ccc556e60c1af4ca71ee3df78fdbec, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5413326733313946104
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360169147638583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Center: {x: 0, y: -0.0000000037252903, z: 0}
+--- !u!114 &3961744027798553701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360169147638583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c7d0f5225778a4caf4345ae2cfd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballMaterials:
+  - {fileID: 2100000, guid: 2d872035a45c5b94ba144fc44fc1fcef, type: 2}
+  - {fileID: 2100000, guid: 68289822584a3e54cb5152bf42171531, type: 2}
+  - {fileID: 2100000, guid: ed0d5cb7847fecb46a5de5e7a8de3216, type: 2}
+  - {fileID: 2100000, guid: 9b52ac15cd068ee468ff4ae2a4ea9235, type: 2}
+  - {fileID: 2100000, guid: 6e036ab4c404aec4eace36d75b7f5e06, type: 2}
+  - {fileID: 2100000, guid: 665b27e9f68a8a04fa525067ec8fe366, type: 2}
+  - {fileID: 2100000, guid: 81bcffdf683ffdb40ae2312300796713, type: 2}
+  - {fileID: 2100000, guid: 496868e9d80f82a4c9bd2d63904dad60, type: 2}
+  - {fileID: 2100000, guid: 5f3b8da6866bf4b42a3e6f8871d665ea, type: 2}
+  - {fileID: 2100000, guid: 6bd2b54cdcdf3c140af26a7ddea22603, type: 2}
+  - {fileID: 2100000, guid: 548d49a8dbca0a34390dc10d3ee0d4fa, type: 2}
+  canTrigger: 1

